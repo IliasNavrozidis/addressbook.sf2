@@ -1,0 +1,21 @@
+Next\AddressBookBundle\Entity\Contact:
+    contact{1..100}:
+        prenom: <firstName()>
+        nom: <lastName()>
+        email: 50%? <email()>
+        telephone: 50%? <phoneNumber()>
+        societe: 70%? @societe* # 70% de société 30% de NULL
+        groupes: <numberBetween(0, 3)>x @groupe*
+
+Next\AddressBookBundle\Entity\Societe:
+    societe{1..10}:
+        nom: <company()>
+        siteWeb: 70%? <url()>
+
+Next\AddressBookBundle\Entity\Groupe:
+    groupe1:
+        nom: Amis
+    groupe2:
+        nom: Famille
+    groupe3:
+        nom: Collègues

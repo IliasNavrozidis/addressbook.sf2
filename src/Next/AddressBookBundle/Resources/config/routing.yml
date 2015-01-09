@@ -1,0 +1,7 @@
+next_address_book_societe:
+    resource: "@NextAddressBookBundle/Resources/config/routing/societe.yml"
+    prefix:   /societe
+
+next_address_book_contact:
+    resource: "@NextAddressBookBundle/Resources/config/routing/contact.yml"
+    prefix:   /contact

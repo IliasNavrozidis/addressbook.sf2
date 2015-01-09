@@ -1,0 +1,22 @@
+{% extends "NextAddressBookBundle::base.html.twig" %}
+
+{% form_theme form "bootstrap_3_layout.html.twig" %}
+
+{% block title %}Modifier un contact - AddressBook{% endblock %}
+
+{% block body %}
+    
+
+<div class="container">
+    <h1>Modifier un contact</h1>
+    {{form_start(form)}}
+        {{form_row(form.prenom)}}
+        {{form_row(form.nom)}}
+        {{form_row(form.email)}}
+        {{form_row(form.telephone)}}
+        <div>
+            {{form_widget(form.save, {'attr': {'class': 'btn btn-primary'} }) }}
+        </div>
+    {{form_end(form)}}
+</div>
+{% endblock %}

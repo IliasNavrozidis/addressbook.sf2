@@ -1,0 +1,20 @@
+{% extends "NextAddressBookBundle::base.html.twig" %}
+
+{% block title %}Détails d'une société - AddressBook{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Détails d'une société</h1>
+    <div class="row">
+        <div class="col-sm-3">
+            <b>Nom</b>
+        </div>
+        <div class="col-sm-9">
+            {{societe.nom}}
+        </div>
+    </div>
+    <a href="{{path('next_address_book_societe_list')}}" class="btn btn-xs btn-default">Revenir à la liste</a>
+    <a href="{{path('next_address_book_societe_modify', {'id': societe.id})}}" class="btn btn-xs btn-warning">Modifier</a>
+    <a href="{{path('next_address_book_societe_delete', {'id': societe.id})}}" class="btn btn-xs btn-danger">Supprimer</a>
+</div>
+{% endblock %}

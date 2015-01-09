@@ -1,0 +1,8 @@
+next_address_book:
+    resource: "@NextAddressBookBundle/Resources/config/routing.yml"
+    prefix:   /
+
+#app:
+#    resource: @AppBundle/Controller/
+#    type:     annotation
+

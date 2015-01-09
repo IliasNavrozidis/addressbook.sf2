@@ -1,0 +1,32 @@
+{% extends "NextAddressBookBundle::base.html.twig" %}
+
+{% block title %}Liste des sociétés - AddressBook{% endblock %}
+
+{% block body %}
+<div class="container">
+    
+    {% for message in app.session.flashbag.get('success') %}
+        <div class="alert alert-success">
+            {{message}}
+        </div>
+    {% endfor %}
+    
+    <h1>Liste des sociétés</h1>
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>Nom</th>
+            <th>Actions</th>
+        </tr>
+        {% for societe in societes %}
+        <tr>
+            <td>{{societe.nom}}</td>
+            <td>
+                <a href="{{path('next_address_book_societe_show', {'id': societe.id})}}" class="btn btn-xs btn-primary">Détails</a>
+                <a href="{{path('next_address_book_societe_modify', {'id': societe.id})}}" class="btn btn-xs btn-warning">Modifier</a>
+                <a href="{{path('next_address_book_societe_delete', {'id': societe.id})}}" class="btn btn-xs btn-danger">Supprimer</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

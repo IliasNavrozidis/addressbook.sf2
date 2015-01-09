@@ -1,0 +1,25 @@
+next_address_book_societe_list:
+    path:     /
+    defaults: { _controller: NextAddressBookBundle:Societe:list }
+
+next_address_book_societe_add:
+    path:     /add
+    defaults: { _controller: NextAddressBookBundle:Societe:add }
+
+next_address_book_societe_show:
+    path:     /{id}
+    defaults: { _controller: NextAddressBookBundle:Societe:show }
+    requirements:
+        id: "[1-9][0-9]*"
+
+next_address_book_societe_delete:
+    path:     /{id}/delete
+    defaults: { _controller: NextAddressBookBundle:Societe:delete }
+    requirements:
+        id: "[1-9][0-9]*"
+
+next_address_book_societe_modify:
+    path:     /{id}/modify
+    defaults: { _controller: NextAddressBookBundle:Societe:modify }
+    requirements:
+        id: "[1-9][0-9]*"

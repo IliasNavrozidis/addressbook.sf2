@@ -1,0 +1,14 @@
+{% extends "NextAddressBookBundle::base.html.twig" %}
+
+{% block title %}Suppression d'un contact - AddressBook{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Suppression d'un contact</h1>
+    <p>Etes-vous sûr de vouloir supprimer {{contact.prenom}} {{contact.nom}} ?</p>
+    <form method="post">
+        <input type="submit" class="btn btn-danger" name="confirm" value="Oui">
+        <input type="submit" class="btn btn-default" name="confirm" value="Non">
+    </form>
+</div>
+{% endblock %}

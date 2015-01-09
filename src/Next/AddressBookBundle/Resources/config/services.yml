@@ -1,0 +1,12 @@
+services:
+    doctrine.orm.default_repository_factory:
+        class:          Doctrine\ORM\Repository\DefaultRepositoryFactory
+        
+    next.address_book_bundle.contact.entity:
+        class: Next\AddressBookBundle\Entity\Contact
+
+    next.address_book_bundle.contact.repository:
+        class: Doctrine\ORM\EntityRepository
+        factory_service: doctrine.orm.default_repository_factory
+        factory_method: getRepository
+        arguments: [@doctrine.orm.entity_manager, 'NextAddressBookBundle:Contact']

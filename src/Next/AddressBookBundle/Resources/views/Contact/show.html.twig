@@ -1,0 +1,74 @@
+{% extends "NextAddressBookBundle::base.html.twig" %}
+
+{% block title %}NextAddressBookBundle:Contact:show{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Détails d'un contact</h1>
+    <div class="row">
+        <div class="col-sm-3">
+            <b>Prénom</b>
+        </div>
+        <div class="col-sm-9">
+            {{contact.prenom}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <b>Nom</b>
+        </div>
+        <div class="col-sm-9">
+            {{contact.nom}}
+        </div>
+    </div>
+    {% if contact.email %}    
+    <div class="row">
+        <div class="col-sm-3">
+            <b>Email</b>
+        </div>
+        <div class="col-sm-9">
+            {{contact.email}}
+        </div>
+    </div>
+    {% endif %}
+    {% if contact.telephone %}    
+    <div class="row">
+        <div class="col-sm-3">
+            <b>Téléphone</b>
+        </div>
+        <div class="col-sm-9">
+            {{contact.telephone}}
+        </div>
+    </div>
+    {% endif %}
+    
+    {% if contact.societe %}    
+    <div class="row">
+        <div class="col-sm-3">
+            <b>Societe</b>
+        </div>
+        <div class="col-sm-9">
+            {{contact.societe.nom}}
+        </div>
+    </div>
+    {% endif %}
+    
+    <div class="row">
+        <div class="col-sm-3">
+            <b>Groupes</b>
+        </div>
+        <div class="col-sm-9">
+            {% for groupe in contact.groupes %}
+                <span class="label label-primary">{{groupe.nom}}</span>
+            {% else %}
+                Pas de groupe
+            {% endfor %}
+        </div>
+    </div>
+        
+    
+    <a href="{{path('next_address_book_contact_list')}}" class="btn btn-xs btn-default">Revenir à la liste</a>
+    <a href="{{path('next_address_book_contact_modify', {'id': contact.id})}}" class="btn btn-xs btn-warning">Modifier</a>
+    <a href="{{path('next_address_book_contact_delete', {'id': contact.id})}}" class="btn btn-xs btn-danger">Supprimer</a>
+</div>
+{% endblock %}
